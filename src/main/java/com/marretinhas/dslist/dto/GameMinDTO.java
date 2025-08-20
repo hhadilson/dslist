@@ -2,6 +2,7 @@ package com.marretinhas.dslist.dto;
 
 import org.springframework.beans.BeanUtils;
 import com.marretinhas.dslist.entities.Game;
+import com.marretinhas.dslist.projections.GameMinProjection;
 
 public class GameMinDTO {
 
@@ -20,6 +21,10 @@ public class GameMinDTO {
   }
 
   public GameMinDTO(Game entity) {
+    BeanUtils.copyProperties(entity, this);
+  }
+
+  public GameMinDTO(GameMinProjection entity) {
     BeanUtils.copyProperties(entity, this);
   }
 

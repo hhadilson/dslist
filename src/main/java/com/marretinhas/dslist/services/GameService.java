@@ -32,4 +32,11 @@ public class GameService {
     return null;
   }
 
+
+
+  @Transactional(readOnly = true)
+  public List<GameMinDTO> searchByList(Long listId) {
+    return gameRepository.searchByList(listId).stream().map(GameMinDTO::new).toList();
+  }
+
 }
