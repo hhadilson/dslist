@@ -26,6 +26,7 @@ public class GameMinDTO {
 
   public GameMinDTO(GameMinProjection entity) {
     BeanUtils.copyProperties(entity, this);
+    this.year = entity.getGameYear();
   }
 
   public Long getId() {
